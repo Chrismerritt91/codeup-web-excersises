@@ -132,15 +132,11 @@ var money = (mermaid + bear + herc) * 3
 undefined
 money
 27
-var googs = 400
+var payPerHourGoogle = 400, payPerHourAmazon = 380, payPerHourFacebook = 350, workHoursGoogle = 6, workHourAmazon = 4, workHoursFacebook = 10
 undefined
-var amazon = 380
+var payForWorkWeek = (payPerHourGoogle * workHoursGoogle) + (payPerHourAmazon * workHourAmazon) + (payPerHourFacebook * workHoursFacebook)
 undefined
-var facebook = 350
-undefined
-var pay = (googs * 6) + (amazon * 4) + (facebook * 10)
-undefined
-pay
+payForWorkWeek
 7420
 var isClassFull = true, isConflict= false
 undefined
@@ -148,12 +144,12 @@ var canEnroll= isClassFull && isConflict
 undefined
 canEnroll
 false
-var twoItems = true, offerExp = false, isPremium = true
+var isNumberOfItemsTwo = true, offerHasNotExpired = true, isPremiumMember = false
 undefined
-var productOffer = (twoItems || isPremium) && offerExp
+var canRecieveOffer = (isNumberOfItemsTwo || isPremiumMember) && offerHasNotExpired
 undefined
-productOffer
-false
+canRecieveOffer
+true
 var passwordLength = true, isNotUsername = true, usernameLength = true, noSpaces = true
 undefined
 var validSignIn = passwordLength && isNotUsername && usernameLength && noSpaces
