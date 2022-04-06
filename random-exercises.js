@@ -22,30 +22,18 @@ perplexed +2
 NaN
 var price = 2.7
 undefined
-price.tofixed(2)
-VM2281:1 Uncaught TypeError: price.tofixed is not a function
-    at <anonymous>:1:7
-(anonymous) @ VM2281:1
-price.toFixed(2)
+price.tofixed(2.7)
+
+price.toFixed(2.7)
 '2.70'
 var price = '2.7'
 undefined
-price.toFixed(20
-VM2441:1 Uncaught SyntaxError: missing ) after argument list
+price.toFixed(20)
 price.toFixed(2)
-VM2465:1 Uncaught TypeError: price.toFixed is not a function
-    at <anonymous>:1:7
-(anonymous) @ VM2465:1
 price.toFixed(2)
-VM2522:1 Uncaught TypeError: price.toFixed is not a function
-    at <anonymous>:1:7
-(anonymous) @ VM2522:1
 isNaN(0)
 false
 isNan(1)
-VM2570:1 Uncaught ReferenceError: isNan is not defined
-    at <anonymous>:1:1
-(anonymous) @ VM2570:1
 isNaN(1)
 false
 isNaN('0')
@@ -114,10 +102,6 @@ sample = sample + ' Students'
 'HELLO CODEUP Students'
 sample = sample.replace('Students','CLASS')
 'HELLO CODEUP CLASS'
-sample.indexOf(C)
-VM4099:1 Uncaught ReferenceError: C is not defined
-    at <anonymous>:1:16
-(anonymous) @ VM4099:1
 sample.indexOf('C')
 6
 sample.substring(6,12)
