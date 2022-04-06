@@ -140,3 +140,23 @@ var facebook = 350
 undefined
 var pay = (googs * 6) + (amazon * 4) + (facebook * 10)
 undefined
+pay
+7420
+var isClassFull = true, isConflict= false
+undefined
+var canEnroll= isClassFull && isConflict
+undefined
+canEnroll
+false
+var twoItems = true, offerExp = false, isPremium = true
+undefined
+var productOffer = (twoItems || isPremium) && offerExp
+undefined
+productOffer
+false
+var passwordLength = true, isNotUsername = true, usernameLength = true, noSpaces = true
+undefined
+var validSignIn = passwordLength && isNotUsername && usernameLength && noSpaces
+undefined
+validSignIn
+true
