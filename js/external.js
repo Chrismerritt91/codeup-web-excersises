@@ -21,6 +21,20 @@ var isThereScheduleConflict = confirm('Does the class time conflict with your sc
 var canEnroll = !isClassFull && !isThereScheduleConflict
 if(canEnroll) {
     alert('You can enroll in class.')
-} else(false)
+} else {
+    alert('You cannot enroll.')}
+
+var numberOfItemsBought = parseFloat(prompt('How many items did you purchase?') >= 2)
+var hasOfferExpired = confirm('Has the offer expired?')
+var isPremiumMember = confirm('Are you a premium member?')
+var promotionIsValid = (numberOfItemsBought || isPremiumMember) && !hasOfferExpired
+if(promotionIsValid) {
+    alert('The offer is available to you.')
+} else {
+    alert('We are sorry the offer is not valid.')}
+
+
+
+
 
 
