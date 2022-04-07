@@ -140,3 +140,4 @@ var validSignIn = passwordLength && isNotUsername && usernameLength && noSpaces
 undefined
 validSignIn
 true
+// redo code to function look at justin's code
