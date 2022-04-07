@@ -2,7 +2,7 @@
 console.log('Hello from external Javascript.')
 alert('Welcome to my website!')
 var favoriteColor = prompt('What is your favorite color?')
-    alert('My favorite color is also ' + favoriteColor)
+    alert('Great, ' + favoriteColor + ' is my favorite color too.')
 
 var daysRentedLittleMermaid = parseFloat(prompt('How many days did you rent the little mermaid?'))
 var daysRentedBrotherBear = parseFloat(prompt('How many days did you rent Brother Bear?'))
