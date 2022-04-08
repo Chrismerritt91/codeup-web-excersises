@@ -21,7 +21,23 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
+// function analyzeColor(string){
+//     if(string === 'red'){
+//         console.log('Red like an apple')
+//     } else if(string === 'blue'){
+//         console.log('blue like the sea')
+//     } else if(string === 'yellow'){
+//         console.log('yellow like a lemon')
+//     } else if(string === 'green'){
+//         console.log('green like the forest')
+//     } else {
+//         console.log( string + ' I dont like that color.')
+//     }
+// }
+// console.log(analyzeColor('pink'))
+// console.log(analyzeColor('red'))
+// console.log(analyzeColor('green'))
+// console.log(analyzeColor('blue'))
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -34,7 +50,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
+// console.log(analyzeColor(randomColor))
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
