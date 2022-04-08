@@ -175,3 +175,6 @@ function getSmallerSegment(str, segmentLength){
 
 getSmallerSegment("Codeup", 3)
 
+// (function (){
+//     IIFE syntax
+// })();
