@@ -1,3 +1,4 @@
+(function(){
 "use strict";
 
 /**
@@ -18,17 +19,17 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello('Chris')
 var helloMessage = sayHello('Chris')
+    console.log(helloMessage);
 
-/**
+    /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
 var myName = 'Chris'
-sayHello(myName)
+    console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -52,13 +53,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(number){
-    return number == 2
+    return number === 2
 }
 console.log(isTwo(1), false)
 console.log(isTwo(2), true)
 console.log(isTwo(3), false)
 
-console.log(isTwo(random))
+console.log(isTwo(random),  + 'your number is ' + random)
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -82,9 +83,10 @@ console.log(calculateTip(0.15, 33.42), 5.013)
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var billTotalDollars = prompt('What is the total of your bill?')
-var tipPercentage = prompt('What percentage would you like to tip?')
-console.log(calculateTip(tipPercentage, billTotalDollars))
+// parseFloat to account for decimals and not rely on type cohersion
+var billTotalDollars = parseFloat(prompt('What is the total of your bill?'))
+var tipPercentage = parseFloat(prompt('What percentage would you like to tip?'))
+alert('your tip should be: ' + calculateTip(tipPercentage, billTotalDollars) + 'dollars.')
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -104,3 +106,4 @@ function applyDiscount(numberprice, numberdiscount){
     return console.log('your total after discount is : ' + (numberprice - discountAmount))
 }
 console.log(applyDiscount(45.99, 0.12))
+})();
