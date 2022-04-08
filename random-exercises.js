@@ -169,9 +169,9 @@ function isSameLength(inOne, inTwo){
     return wordsEqual
 }
 // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
-function getSmallerSegment(inputString, inputnumber){
-    var cutWord = inputnumber == inputString
-    return cutWord
+function getSmallerSegment(str, segmentLength){
+    return str.substring(0, segmentLength).toLowerCase()
 }
-// example input: getSmallerSegment("Codeup", 3)
-// example output: "cod"
+
+example input: getSmallerSegment("Codeup", 3)
+example output: "cod"
