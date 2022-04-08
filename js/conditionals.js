@@ -107,29 +107,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNum, totalCost){
-    var findPercentage = totalCost / 100
-    if(luckyNum == 0){
-        console.log('Your new total is: ' + (findPercentage * 100) + ' dollars')
-    } else if(luckyNum == 1) {
-        console.log('Your new total is: ' + (findPercentage * 90) + ' dollars')
-    } else if(luckyNum == 2) {
-        console.log('Your new total is: ' + (findPercentage * 75) + ' dollars')
-    } else if(luckyNum == 3) {
-        console.log('Your new total is: ' + (findPercentage * 65) + ' dollars')
-    } else if(luckyNum == 4) {
-        console.log('Your new total is: ' + (findPercentage * 50) + ' dollars')
-    } else if(luckyNum == 5) {
-        console.log('Your items are free.')
-    } else {}
-
-}
-calculateTotal(0, 100) // returns 100
-calculateTotal(4, 100) // returns 50
-calculateTotal(5, 100) // returns 0
-calculateTotal(1, 100) // returns 90
-calculateTotal(2, 100) // returns 75
-calculateTotal(3, 100) // returns 65
+// function calculateTotal(luckyNum, totalCost){
+//     var findPercentage = totalCost / 100
+//     if(luckyNum == 0){
+//         console.log('Your new total is: ' + (findPercentage * 100) + ' dollars')
+//     } else if(luckyNum == 1) {
+//         console.log('Your new total is: ' + (findPercentage * 90) + ' dollars')
+//     } else if(luckyNum == 2) {
+//         console.log('Your new total is: ' + (findPercentage * 75) + ' dollars')
+//     } else if(luckyNum == 3) {
+//         console.log('Your new total is: ' + (findPercentage * 65) + ' dollars')
+//     } else if(luckyNum == 4) {
+//         console.log('Your new total is: ' + (findPercentage * 50) + ' dollars')
+//     } else if(luckyNum == 5) {
+//         console.log('Your items are free.')
+//     } else {}
+//
+// }
+// calculateTotal(0, 100) // returns 100
+// calculateTotal(4, 100) // returns 50
+// calculateTotal(5, 100) // returns 0
+// calculateTotal(1, 100) // returns 90
+// calculateTotal(2, 100) // returns 75
+// calculateTotal(3, 100) // returns 65
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -138,8 +138,29 @@ calculateTotal(3, 100) // returns 65
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+// generate random number 0 through 6
+var luckyNumber = Math.floor(Math.random() * 6);
+
+function calculateTotal(luckyNum, totalCost){
+    var findPercentage = totalCost / 100
+    if(luckyNum === 0){
+        alert('Your new total is: ' + (findPercentage * 100) + ' dollars')
+    } else if(luckyNum === 1) {
+        alert('Your new total is: ' + (findPercentage * 90) + ' dollars')
+    } else if(luckyNum === 2) {
+        alert('Your new total is: ' + (findPercentage * 75) + ' dollars')
+    } else if(luckyNum === 3) {
+        alert('Your new total is: ' + (findPercentage * 65) + ' dollars')
+    } else if(luckyNum === 4) {
+        alert('Your new total is: ' + (findPercentage * 50) + ' dollars')
+    } else if(luckyNum === 5) {
+       alert('Your items are free.')
+    } else {}
+}
+var billTotalDollars = prompt('What was the total of your bill?')
+alert('your lucky number was: ' + luckyNumber)
+alert('Your price before discount was: ' + billTotalDollars)
+calculateTotal(luckyNumber, billTotalDollars)
 
 /**
  * TODO:
