@@ -55,14 +55,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-
+function analyzeColor(str) {
+    switch (str) {
+        case('red'):
+            console.log('Red like an apple')
+            break;
+        case('blue'):
+            console.log('blue like the sea')
+            break;
+        case('green'):
+            console.log('green like the forest')
+            break;
+        case('orange'):
+            console.log('orange like the sunset')
+            break;
+        case('yellow'):
+            console.log('yellow like a lemon')
+            break;
+        default:
+            console.log(str + ' i dont like this color')
+            break;
+    }
+}
+// console.log(analyzeColor(randomColor))
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
+var userColor = prompt('What is your favorite color?')
+console.log(analyzeColor(userColor))
 /* ########################################################################## */
 
 /**
