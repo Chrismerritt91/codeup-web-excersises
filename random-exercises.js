@@ -173,5 +173,5 @@ function getSmallerSegment(str, segmentLength){
     return str.substring(0, segmentLength).toLowerCase()
 }
 
-example input: getSmallerSegment("Codeup", 3)
-example output: "cod"
+getSmallerSegment("Codeup", 3)
+
