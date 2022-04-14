@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    /**
+   /**
      * TODO:
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
@@ -38,28 +38,49 @@
     names.forEach(function(name){
         console.log(name)
     })
-    /**
-     * TODO:
-     * Create the following three functions, each will accept an array and
-     * return an an element from it
-     * - first: returns the first item in the array
-     * - second: returns the second item in the array
-     * - last: returns the last item in the array
-     *
-     * Example:
-     *  > first([1, 2, 3, 4, 5]) // returns 1
-     *  > second([1, 2, 3, 4, 5]) // returns 2
-     *  > last([1, 2, 3, 4, 5]) // return 5
-     */
-    var numbers = [1, 2, 3, 4, 5]
 
-    for(var i = 0; i < 1; i += 1){
-        console.log(numbers[0])
+     // * TODO:
+     // * Create the following three functions, each will accept an array and
+     // * return an an element from it
+     // * - first: returns the first item in the array
+     // * - second: returns the second item in the array
+     // * - last: returns the last item in the array
+     // *
+     // * Example:
+      first([1, 2, 3, 4, 5]) // returns 1
+      second([1, 2, 3, 4, 5]) // returns 2
+      last([1, 2, 3, 4, 5]) // return 5
+    // My solution
+    // var numbers = [1, 2, 3, 4, 5]
+    //
+    // function firstElement(numbers){
+    // for(var i = 0; i < 1; i += 1){
+    //     console.log(numbers[0])
+    // }}
+    // firstElement(numbers)
+    // function secondElement(numbers){
+    // for(var i = 0; i < 1; i += 1){
+    //     console.log(numbers[1])
+    // }}
+    // secondElement(numbers)
+    // function fifthElement(numbers){
+    // for(var i = 0; i < 1; i += 1){
+    //     console.log(numbers[4])
+    // }}
+    // fifthElement(numbers)
+//taught solution
+    function first(numbers){
+        return numbers[0]
     }
-    for(var i = 0; i < 1; i += 1){
-        console.log(numbers[1])
+
+    function second(numbers){
+        return numbers[1]
     }
-    for(var i = 0; i < 1; i += 1){
-        console.log(numbers[4])
+
+    function last(numbers){
+        return numbers[numbers.length -1]
     }
+    console.log(first([1, 2, 3, 4, 5])) // returns 1
+    console.log(second([1, 2, 3, 4, 5])) // returns 2
+    console.log(last([1, 2, 3, 4, 5])) // return 5
 })();
