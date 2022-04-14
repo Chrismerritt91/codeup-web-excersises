@@ -217,17 +217,30 @@
 
 // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
 
-/* !! Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
-        'input num in input array' if the second argument is an element in the first argument array
-        otherwise, the function should return the string 'input num NOT in input array'
-   !!
-
-   // !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
-
+//  !! Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
+//         'input num in input array' if the second argument is an element in the first argument array
+//         otherwise, the function should return the string 'input num NOT in input array'
+//    !!
+//
+//  !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
+//
 // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
+//
+//  !! Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
+//         'input num in input array' if the second argument is an element in the first argument array
+//         otherwise, the function should return the string 'input num NOT in input array'
+//
 
-/* !! Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
-        'input num in input array' if the second argument is an element in the first argument array
-        otherwise, the function should return the string 'input num NOT in input array'
-   !!
- */
+var numbers = [4,13,10,7,5]
+//solve with while loop
+function numInArrayWhile(numbers, num){
+    var flag = false;
+    var i = numbers.length - 1;
+    while(i >=0){
+        if(numbers[i] === num) {
+            flag = true;
+        }
+        i--
+    }
+    return flag === true ? 'input num in input array' : 'input num not in input array';
+}
