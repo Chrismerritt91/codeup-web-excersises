@@ -11,7 +11,14 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+var person = {
+        firstName: 'Chris',
+        lastName: 'Merritt',
+        sayHello: function(){
+            console.log('hello ' + this.firstName +' ' + this.lastName + '!')
+        }
+    }
+    console.log(person.sayHello())
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -36,11 +43,24 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    function discountQual(num) {
+        var LimitDollars = 200
+        for(var i = 0; i < shoppers.length; i++)
+            if(shoppers[i].amount > LimitDollars){
+                var newTotal = (shoppers[i].amount / 100) * 88
+                console.log(shoppers[i].name + ', ' + shoppers[i].amount + ' dollars spent, ' +'your new total is...'+ newTotal)
+            } else {
+                console.log(shoppers[i].name + ', ' + shoppers[i].amount + ' dollars spent, ' + 'you did not qualify for the discount')
+            }
+
+    }
+    console.log(discountQual(shoppers.amount))
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,7 +74,49 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+       {
+            title: 'The Terminal List',
+            author: {
+                firstName: 'Jack',
+                lastName: 'Carr'
+            }
+        },
 
+        {
+            title: 'The Killing Floor',
+            author: {
+                firstName: 'Lee',
+                lastName: 'Child'
+            }
+        },
+        {
+            title: 'The Lone Survivor',
+            author: {
+                firstName: 'Marcus',
+                lastName: 'Lutrell'
+            }
+        },
+        {
+            title: 'Savage Son',
+            author: {
+                firstName: 'Jack',
+                lastName: 'Carr'
+            }
+        },
+        {
+            title: 'First Blood',
+            author: {
+                firstName: 'David',
+                lastName: 'Morell'
+            }
+        }
+    ]
+
+
+    books.forEach(function(book){
+        console.log('book # ' + books.indexOf(book) + ' ' + ' title: ' + book.title + ' ' + 'by ' + book.author.firstName + ' ' + book.author.lastName)
+    })
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -90,5 +152,31 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+    // console.log(books)
+    //
+    // function createBook(title, authorFirst, authorLast){
+    //     var newBook = {
+    //         title: title,
+    //         author: {
+    //             firstName: authorFirst,
+    //             lastName: authorLast
+    //         }
+    //
+    //     }
+    //     books.push(newBook)
+    //     return newBook
+    // }
+    // createBook('Savage Son','jack','Carr')
+    // console.log(books)
+    //
+    // function showBookInfo(title){
+    //    for(var i = 0; i < books.length; i++){
+    //        // if(title === books[i].title){
+    //            console.log(' Book info: ' + books[i].title + ' ' + 'by ' + books[i].author.firstName + ' ' + books[i].author.lastName)
+    //        // }
+    //    }
+    // }
+    //
+    // console.log(showBookInfo('The Killing Floor'))
+    
 })();
