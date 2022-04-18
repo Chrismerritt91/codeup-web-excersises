@@ -295,19 +295,19 @@
 //     Example input: "aBc12#"
 // Example output: "AbC12#"
 //
-function swapCase(str){
-    var output = '';
-    str.split('').forEach(function(character){
-        if(character === character.toUpperCase()){
-            output += character.toLowerCase();
-        } else {
-            output += character.toUpperCase();
-        }
-    });
-    return output;
-}
-console.log(swapCase("aBc12#"))
-console.log( "AbC12#")
+// function swapCase(str){
+//     var output = '';
+//     str.split('').forEach(function(character){
+//         if(character === character.toUpperCase()){
+//             output += character.toLowerCase();
+//         } else {
+//             output += character.toUpperCase();
+//         }
+//     });
+//     return output;
+// }
+// console.log(swapCase("aBc12#"))
+// console.log( "AbC12#")
 // ============== BONUS 3
 //
 // Write a program that takes a given string appended with a number at the end. The program will check the length of the string to verify the string is equal to the number appended. If the number appended equals the string length, output "Yes". if the number appended does not equal the string length, output "No".
@@ -316,3 +316,144 @@ console.log( "AbC12#")
 // Example Output: "Yes"
 //
 // Example Input: "codingchallenge25"
+
+
+// What is a JS object?
+// An object is a grouping of data and functionality. Data items contained in an object are referred to as properties, and functions on an object are referred to as methods.
+// - What is the practical difference between these two statements?
+// someObject.someProperty = 4; - the period is the common way to assign a property
+// someObject[‘someProperty’] = 4; - the brackets are a way to assign a property if you dont know the name
+// - Are JS objects mutable?
+// - Given the following code, what will be logged and why?
+// var objA = {a: 1, b: 2};
+// var objB = objA;
+// objA.a = 7;
+// console.log(objB.a); = 7
+// - Is it possible to nest another object inside of an object? yes
+//     - Is it possible to nest an array in an object? yes
+//     - What does ‘this’ refer to within an object method in JS? the object you are currently in
+
+// mini exercise 1!!!!!!
+
+// Create a few beverage objects and assign values to each object for the following properties:
+//
+//     - brandName
+//     - type
+//     - volumeInLiters
+//     - priceInCents
+//     - expirationDate
+//     - datesOfPreviousSips (use an array of strings)
+// - isOpen
+//
+// Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+//
+// var beverage1 = {
+//     brandName: 'pepsi',
+//     type: 'soda',
+//     volumeInLiters: 2,
+//     priceInCents: 250,
+//     expirationDate: 'apr 25',
+//     datesOfPreviousSips: ['apr 5', 'apr 7', 'apr 11', 'apr 15'],
+//     isOpen: true
+// }
+//      var beverage2 ={
+//         brandName: 'coke',
+//         type: 'soda',
+//         volumeInLiters: 2,
+//         priceInCents: 250,
+//         expirationDate:'apr 11',
+//         datesOfPreviousSips: ['mar 25', 'mar 27', 'mar 30', 'apr 2'],
+//         isOpen: true
+//     }
+// var beverage3 ={
+//     brandName: 'dr pepper',
+//     type: 'soda',
+//     volumeInLiters: 2,
+//     priceInCents: 300,
+//     expirationDate:'may 1',
+//     datesOfPreviousSips: [],
+//     isOpen: false
+// }
+// var beverage4 ={
+//     brandName: 'red diamond',
+//     type: 'sweet tea',
+//     volumeInLiters: 2.5,
+//     priceInCents: 200,
+//     expirationDate:'may 12',
+//     datesOfPreviousSips: ['may 2', 'may 6'],
+//     isOpen: true
+// }
+// var beverages = [beverage1, beverage2, beverage3, beverage4]
+// console.log(beverages)
+// console.log(beverages[0].brandName)
+// beverage4.expirationDate = 'may 7'
+// console.log(beverage4.expirationDate)
+// beverages.forEach(function(beverage){
+//     console.log(beverage.brandName)
+// })
+
+// -- Mini Exercise 2
+//
+// var users = [
+//     {
+//         givenName: 'Sam',
+//         age: 21
+//     },
+//     {
+//         givenName: 'Cathy',
+//         age: 34
+//     },
+//     {
+//         givenName: 'Karen',
+//         age: 43
+//     }
+// ];
+//
+// 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+// var name1 = users[0].givenName
+// var name2 = users[1].givenName
+// var name3 = users[2].givenName
+// console.log(name1 +' ' + name2 +' '+ name3)
+//
+// var output = '';
+// users.forEach(function(user){
+//     output += user.givenName + " ";
+// })
+// console.log(output.trim());
+
+
+
+
+// 2. Change the names of all users to "John Doe"
+// users[0].givenName = 'John Doe'
+// users[1].givenName = 'John Doe'
+// users[2].givenName = 'John Doe'
+users.forEach(function(user){
+    user.givenName = 'John Doe'
+})
+console.log(users)
+
+
+
+
+// 3. Increase the current age of all users by 1
+// users.forEach(function(user){
+//     user.age += 1
+// })
+// users.forEach(function(user){
+//     console.log(user.age)})
+
+// for(var i = 0;i < users.length; i++){
+//     users[i].age += 1
+// }
+// users.forEach(function(user){
+//     console.log(user.age)})
+
+// users[0].age += 1
+// users[1].age += 1
+// users[2].age += 1
+// users.forEach(function(user){
+//     console.log(user.age)})
+// //
+// Can you accomplish each step using iteration?
