@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>forms exercise</title>
+    <title>Register With Us</title>
 </head>
 <body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <fieldset>
+        <legend>User Info</legend>
+        <label for="email">Email Address</label>
+        <input id="email" name="email" placeholder="email address" type="email">
+        <br>
+        <label for="password">Password</label>
+        <input id="password" name="password" placeholder="password" type="password">
+        <br>
+    </fieldset>
+
+    <h3>Bio</h3>
+    <textarea id="bio" name="bio" placeholder="Please tell us about yourself" rows="10" cols="40"></textarea>
+    <fieldset>
+        <legend>How did you hear about us?</legend>
+        <input type="radio" name="billboard" value="billboard">billboard<br>
+        <input type="radio" name="radio advertisement" value="radio advertisement">radio advertisement<br>
+        <input type="radio" name="internet advertisement" value="internet advertisement">internet advertisement<br>
+        <input type="radio" name="other" value="other">other<br>
+    </fieldset>
+    <fieldset>
+        <legend>What is your browser of choice?</legend>
+        <select name="browser choice" id="browser choice">
+            <option value="mozilla firefox">mozilla firefox</option>
+            <option value="safari">safari</option>
+            <option value="google chrome">google chrome</option>
+        </select>
+    </fieldset>
+    <button>submit</button>
+</form>
 
 </body>
 </html>
