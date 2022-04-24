@@ -1,3 +1,38 @@
-.fancy-header{
-    color:purple;
+
+header p,h1{
+    color: antiquewhite;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+body{
+    background-color: lightgray;
+    background-image: url("/images/back-pic.img.jpg");
+    background-size: 1200px;
+    font-family:'Space Mono', monospace;
+}
+
+table,td,tr{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+h2,ul,ol,p,table{
+    color: antiquewhite;
+}
+ul {
+    list-style-type: square;
+}
+a:link{
+    color: indianred;
+}
+a:visited{
+    color: aqua;
+}
+a:hover{
+    color: cadetblue;
+}
+a:active{
+    color: springgreen;
 }
