@@ -1,3 +1,6 @@
+*{
+    /*box-sizing: border-box;*/
+}
 body, html {
     height: 100%;
     width: 100%;
@@ -7,24 +10,24 @@ body, html {
 }
 .message{
     margin: 10px;
-    border-style: groove;
     padding: 5px;
+    border: 5px grey;
     border-radius: 5px;
     text-indent: 5px;
 }
 #blue{
-    background-color: cornflowerblue;
-    color:blue;
+    background-color: #ccdeff;
+    color: #484191;
 }
 #green{
-    background-color: #cbffcd;
-    color: green;
+    background-color: #cff3da;
+    color: #2b7644;
 }
 #yellow{
-    background-color: lemonchiffon;
-    color: darkgoldenrod;
+    background-color: #fcfbc9;
+    color: #8a7610;
 }
 #red{
-    background-color: lightpink;
-    color: darkred;
+    background-color: #FAD2D6;
+    color: #830000;
 }
