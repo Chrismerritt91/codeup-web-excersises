@@ -85,20 +85,23 @@ a {
     line-height: 80px;
 }
 .container{
-    height: 2em;
+    margin: 2em;
 }
 .profile-details{
     float: left;
-    width: calc(25% - .5em);
+    margin: 0 .5em;
+    width: calc(25% - 1em);
 }
 .timeline{
     float: left;
-    width: calc(50% - .5em);
+    margin: 0 .5em;
+    width: calc(50% - 1em);
 
 }
 .who-to-follow{
     float: right;
-    width: calc(25% - .5em);
+    margin: 0 .5em;
+    width: calc(25% - 1em);
 }
 .media{
     width: 100%;
