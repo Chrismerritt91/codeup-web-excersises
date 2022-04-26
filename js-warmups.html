@@ -51,39 +51,54 @@
         // console.log(returnEveryOtherElement(['bob', 'sally', 'cathy', 'fred'])) // returns ['bob', 'cathy']
         // console.log(returnEveryOtherElement([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])) // returns [10, 8, 6, 4, 2]
 
-        var trails = [
-            {
-                name: "Salado Creek Greenway",
-                distanceInMiles: 20,
-                isPaved: true
-            },
-            {
-                name: "Leon Creek Greenway",
-                distanceInMiles: 20.1,
-                isPaved: true
-            },
-            {
-                name: "McAllister Park: Blue Loop",
-                distanceInMiles: 6.3,
-                isPaved: false
-            },
-            {
-                name: "Phil Hardberger Park: Geology Trail",
-                distanceInMiles: 0.8,
-                isPaved: false
-            }
-        ]
-        function unpavedTrails(input){
-            var total = 0
-            input.forEach(function(trail){
-                if(!trail.isPaved){
-                    total += trail.distanceInMiles
-                }
-            })
-            return total
-        }
+        // var trails = [
+        //     {
+        //         name: "Salado Creek Greenway",
+        //         distanceInMiles: 20,
+        //         isPaved: true
+        //     },
+        //     {
+        //         name: "Leon Creek Greenway",
+        //         distanceInMiles: 20.1,
+        //         isPaved: true
+        //     },
+        //     {
+        //         name: "McAllister Park: Blue Loop",
+        //         distanceInMiles: 6.3,
+        //         isPaved: false
+        //     },
+        //     {
+        //         name: "Phil Hardberger Park: Geology Trail",
+        //         distanceInMiles: 0.8,
+        //         isPaved: false
+        //     }
+        // ]
+        // function unpavedTrails(input){
+        //     var total = 0
+        //     input.forEach(function(trail){
+        //         if(!trail.isPaved){
+        //             total += trail.distanceInMiles
+        //         }
+        //     })
+        //     return total
+        // }
+        //
+        // console.log(unpavedTrails(trails))
 
-        console.log(unpavedTrails(trails))
+        // EX: 'webmaster' -> 'abeemrstw'
+        // 'developer' -> 'deeeloprv'
+
+    //sort a strings letters in alphabetical order, capitalized will come first, go to lowercase to solve issue
+
+        function alphabeticStr(str){
+            var output = str.split('')
+            var alphSort = output.sort();
+            var result = alphSort.join("")
+            return result
+        } //or return str.split('').sort().join("")
+        console.log(alphabeticStr('webmaster'))
+
+
     </script>
 </body>
 </html>

@@ -36,3 +36,29 @@ a:hover{
 a:active{
     color: springgreen;
 }
+
+.img1{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+}
+.img2{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px
+}
+.img3{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px
+}
+.img4{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: content-box;
+}
