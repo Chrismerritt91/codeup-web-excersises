@@ -85,7 +85,7 @@ a {
     line-height: 80px;
 }
 .container{
-    margin: 2em;
+    margin: 2em 0;
 }
 .profile-details{
     float: left;
