@@ -136,56 +136,71 @@
         //
         // Consider an array of product objects:
 
-            const products = [
-                {
-                    name: 'Hammer',
-                    priceInCents: 4500,
-                    isInStock: true
-                },
-                {
-                    name: 'Computer',
-                    priceInCents: 45000,
-                    isInStock: true
-                },
-                {
-                    name: 'Water Bottle',
-                    priceInCents: 3300,
-                    isInStock: true
-                },
-                {
-                    name: 'Car',
-                    priceInCents: 990000,
-                    isInStock: true
-                },
-                {
-                    name: 'Cup',
-                    priceInCents: 230,
-                    isInStock: false
-                },
-                {
-                    name: 'Book',
-                    priceInCents: 540,
-                    isInStock: false
-                },
-            ];
-
-        // Create the following functions that take in an array of product objects and return various values:
+        //     const products = [
+        //         {
+        //             name: 'Hammer',
+        //             priceInCents: 4500,
+        //             isInStock: true
+        //         },
+        //         {
+        //             name: 'Computer',
+        //             priceInCents: 45000,
+        //             isInStock: true
+        //         },
+        //         {
+        //             name: 'Water Bottle',
+        //             priceInCents: 3300,
+        //             isInStock: true
+        //         },
+        //         {
+        //             name: 'Car',
+        //             priceInCents: 990000,
+        //             isInStock: true
+        //         },
+        //         {
+        //             name: 'Cup',
+        //             priceInCents: 230,
+        //             isInStock: false
+        //         },
+        //         {
+        //             name: 'Book',
+        //             priceInCents: 540,
+        //             isInStock: false
+        //         },
+        //     ];
         //
-           function returnMostExpensiveProductObjectInStock(products){
-               for(var i = 0; i < products.length; i += 1){
-                   var highestPrice = Math.max(products[i].priceInCents)
-                   console.log(highestPrice);
-                   var price = products[i].priceInCents
-                   if(price === highestPrice){
-                       return products[i].name
-                   }
-               }
-           }
+        // // Create the following functions that take in an array of product objects and return various values:
+        // //
+        //    function returnMostExpensiveProductObjectInStock(products){
+        //        for(var i = 0; i < products.length; i += 1){
+        //            var highestPrice = Math.max(products[i].priceInCents)
+        //            console.log(highestPrice);
+        //            var price = products[i].priceInCents
+        //            if(price === highestPrice){
+        //                return products[i].name
+        //            }
+        //        }
+        //    }
+        //
+        // console.log(returnMostExpensiveProductObjectInStock(products));
+        // // returnLeastExpensiveProductObjectInStock(products)
+        // // returnAveragePriceOfAllProductsInStock(products)
+        // // returnProductObjectsNotInStock(products)
+        //
+        // Write a function that accepts an array of numbers and returns the average.
+        //
+        //     Test inputs:
+        //     [3, 5, 7, 10, 0]
+        //         [0, 3, 5, 6, 21]
+// getting better keep practicing!! when adding the pieces of an array use +=, you can also use foreach loop
+<!--        function arrayAverage(array){-->
+<!--            var sum = 0-->
+<!--            for (var i=0;i< array.length;i++){-->
+<!--              sum += array[i]-->
+<!--            } return sum / array.length-->
+<!--        } -->
 
-        console.log(returnMostExpensiveProductObjectInStock(products));
-        // returnLeastExpensiveProductObjectInStock(products)
-        // returnAveragePriceOfAllProductsInStock(products)
-        // returnProductObjectsNotInStock(products)
-    </script>
+<!--        console.log(arrayAverage([3,5,7,10,0]));-->
+ </script>
 </body>
 </html>
