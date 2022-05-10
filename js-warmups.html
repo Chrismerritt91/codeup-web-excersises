@@ -201,6 +201,24 @@
 <!--        } -->
 
 <!--        console.log(arrayAverage([3,5,7,10,0]));-->
+
+        let classes = [
+            {class: "6th grade history", students: 18},
+            {class: "7th grade history", students: 20},
+            {class: "8th grade history", students: 22}
+        ];
+
+        // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
+        //got it on the first try!!
+function classTotal(classes){
+    var total = 0
+    for (var i=0;i<classes.length;i++){
+        total += classes[i].students
+    }return total
+}
+
+        console.log(classTotal(classes));
+        // Bonus: instead of the total students, return the highest number of students in any class
  </script>
 </body>
 </html>
