@@ -6,109 +6,109 @@
 </head>
 <body>
 <h1>JS Warmups</h1>
-    <script>
-        "use strict";
+<script>
+    "use strict";
 
-        // ================================= WARM UP
-        //
-        // Create a file called js-warm-ups.html and add script tags to write JavaScript code.
-        //
-        //     Write a function, returnFirstAndLast, that takes in an array of values and returns an array of just the first and last elements. Assume the input array contains at least two elements. The function should not mutate the input array.
-        //
-        //     Examples...
-        // multiple different ways
-        // function returnFirstAndLast(input){
-        //     // var output = []
-        //     // var firstElement = input[0]
-        //     // var lastElement = input[input.length -1]
-        //     // output.push(firstElement)
-        //     // output.push(lastElement)
-        //     // // return [firstElement, lastElement]
-        //     // return output
-        //     return [input[0], input[input.length - 1]]
-        // }
-        //
-        // console.log(returnFirstAndLast([1, 2, 3, 4]))// returns [1, 4]
-        // console.log(returnFirstAndLast(['hello', 'bob', 7, null, 'world'])) // returns ['hello', 'world']
-        // console.log(returnFirstAndLast(['hello', 'world'])) // returns ['hello', 'world']
-        // //
-        // //
-        // // Write a function, returnEveryOtherElement, that takes in an array of inputs and returns an array of every other input, starting with the first. Assume the array will contain at least three elements. The function should not mutate the input array.
-        // //
-        // //     Examples...
-        // function returnEveryOtherElement(array) {
-        //     var output = [];
-        //     for (var i = 0; i < array.length; i += 1) {
-        //         //or increment by +=2 and you dont need the if
-        //         if(i % 2 === 0){
-        //             output.push(array[i])
-        //         }
-        //     }return output
-        // }
-        //
-        // console.log(returnEveryOtherElement([1, 2, 3, 4, 5])) // returns [1, 3, 5]
-        // console.log(returnEveryOtherElement([1, 2, 3])) // returns [1, 3]
-        // console.log(returnEveryOtherElement(['bob', 'sally', 'cathy', 'fred'])) // returns ['bob', 'cathy']
-        // console.log(returnEveryOtherElement([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])) // returns [10, 8, 6, 4, 2]
+    // ================================= WARM UP
+    //
+    // Create a file called js-warm-ups.html and add script tags to write JavaScript code.
+    //
+    //     Write a function, returnFirstAndLast, that takes in an array of values and returns an array of just the first and last elements. Assume the input array contains at least two elements. The function should not mutate the input array.
+    //
+    //     Examples...
+    // multiple different ways
+    // function returnFirstAndLast(input){
+    //     // var output = []
+    //     // var firstElement = input[0]
+    //     // var lastElement = input[input.length -1]
+    //     // output.push(firstElement)
+    //     // output.push(lastElement)
+    //     // // return [firstElement, lastElement]
+    //     // return output
+    //     return [input[0], input[input.length - 1]]
+    // }
+    //
+    // console.log(returnFirstAndLast([1, 2, 3, 4]))// returns [1, 4]
+    // console.log(returnFirstAndLast(['hello', 'bob', 7, null, 'world'])) // returns ['hello', 'world']
+    // console.log(returnFirstAndLast(['hello', 'world'])) // returns ['hello', 'world']
+    // //
+    // //
+    // // Write a function, returnEveryOtherElement, that takes in an array of inputs and returns an array of every other input, starting with the first. Assume the array will contain at least three elements. The function should not mutate the input array.
+    // //
+    // //     Examples...
+    // function returnEveryOtherElement(array) {
+    //     var output = [];
+    //     for (var i = 0; i < array.length; i += 1) {
+    //         //or increment by +=2 and you dont need the if
+    //         if(i % 2 === 0){
+    //             output.push(array[i])
+    //         }
+    //     }return output
+    // }
+    //
+    // console.log(returnEveryOtherElement([1, 2, 3, 4, 5])) // returns [1, 3, 5]
+    // console.log(returnEveryOtherElement([1, 2, 3])) // returns [1, 3]
+    // console.log(returnEveryOtherElement(['bob', 'sally', 'cathy', 'fred'])) // returns ['bob', 'cathy']
+    // console.log(returnEveryOtherElement([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])) // returns [10, 8, 6, 4, 2]
 
-        // var trails = [
-        //     {
-        //         name: "Salado Creek Greenway",
-        //         distanceInMiles: 20,
-        //         isPaved: true
-        //     },
-        //     {
-        //         name: "Leon Creek Greenway",
-        //         distanceInMiles: 20.1,
-        //         isPaved: true
-        //     },
-        //     {
-        //         name: "McAllister Park: Blue Loop",
-        //         distanceInMiles: 6.3,
-        //         isPaved: false
-        //     },
-        //     {
-        //         name: "Phil Hardberger Park: Geology Trail",
-        //         distanceInMiles: 0.8,
-        //         isPaved: false
-        //     }
-        // ]
-        // function unpavedTrails(input){
-        //     var total = 0
-        //     input.forEach(function(trail){
-        //         if(!trail.isPaved){
-        //             total += trail.distanceInMiles
-        //         }
-        //     })
-        //     return total
-        // }
-        //
-        // console.log(unpavedTrails(trails))
+    // var trails = [
+    //     {
+    //         name: "Salado Creek Greenway",
+    //         distanceInMiles: 20,
+    //         isPaved: true
+    //     },
+    //     {
+    //         name: "Leon Creek Greenway",
+    //         distanceInMiles: 20.1,
+    //         isPaved: true
+    //     },
+    //     {
+    //         name: "McAllister Park: Blue Loop",
+    //         distanceInMiles: 6.3,
+    //         isPaved: false
+    //     },
+    //     {
+    //         name: "Phil Hardberger Park: Geology Trail",
+    //         distanceInMiles: 0.8,
+    //         isPaved: false
+    //     }
+    // ]
+    // function unpavedTrails(input){
+    //     var total = 0
+    //     input.forEach(function(trail){
+    //         if(!trail.isPaved){
+    //             total += trail.distanceInMiles
+    //         }
+    //     })
+    //     return total
+    // }
+    //
+    // console.log(unpavedTrails(trails))
 
-        // EX: 'webmaster' -> 'abeemrstw'
-        // 'developer' -> 'deeeloprv'
+    // EX: 'webmaster' -> 'abeemrstw'
+    // 'developer' -> 'deeeloprv'
 
     //sort a strings letters in alphabetical order, capitalized will come first, go to lowercase to solve issue
 
-        // function alphabeticStr(str){
-        //     var output = str.split('')
-        //     var alphSort = output.sort();
-        //     var result = alphSort.join("")
-        //     return result
-        // } //or return str.split('').sort().join("")
-        // console.log(alphabeticStr('webmaster'))
+    // function alphabeticStr(str){
+    //     var output = str.split('')
+    //     var alphSort = output.sort();
+    //     var result = alphSort.join("")
+    //     return result
+    // } //or return str.split('').sort().join("")
+    // console.log(alphabeticStr('webmaster'))
 
-        // ================================= WARM UP
-        //
-        //
-        // Create a function, createNumObject, that takes in two numbers and returns an object with the following properties:
-        //
-        // {
-        //
-        //     lowest: LOWEST_NUMBER_HERE,
-        //         highest: HIGHEST_NUMBER_HERE
-        // }
-        // create an object out of 2 numbers
+    // ================================= WARM UP
+    //
+    //
+    // Create a function, createNumObject, that takes in two numbers and returns an object with the following properties:
+    //
+    // {
+    //
+    //     lowest: LOWEST_NUMBER_HERE,
+    //         highest: HIGHEST_NUMBER_HERE
+    // }
+    // create an object out of 2 numbers
     // function createNumObject(num1,num2){
     //         if(num1 > num2){
     //             return{
@@ -132,94 +132,151 @@
     //     console.log(createNumObject(10, 5)); // returns...
     //     console.log(createNumObject(7, 7)); // returns...
 
-        // ================================= WARM UP
-        //
-        // Consider an array of product objects:
+    // ================================= WARM UP
+    //
+    // Consider an array of product objects:
 
-        //     const products = [
-        //         {
-        //             name: 'Hammer',
-        //             priceInCents: 4500,
-        //             isInStock: true
-        //         },
-        //         {
-        //             name: 'Computer',
-        //             priceInCents: 45000,
-        //             isInStock: true
-        //         },
-        //         {
-        //             name: 'Water Bottle',
-        //             priceInCents: 3300,
-        //             isInStock: true
-        //         },
-        //         {
-        //             name: 'Car',
-        //             priceInCents: 990000,
-        //             isInStock: true
-        //         },
-        //         {
-        //             name: 'Cup',
-        //             priceInCents: 230,
-        //             isInStock: false
-        //         },
-        //         {
-        //             name: 'Book',
-        //             priceInCents: 540,
-        //             isInStock: false
-        //         },
-        //     ];
-        //
-        // // Create the following functions that take in an array of product objects and return various values:
-        // //
-        //    function returnMostExpensiveProductObjectInStock(products){
-        //        for(var i = 0; i < products.length; i += 1){
-        //            var highestPrice = Math.max(products[i].priceInCents)
-        //            console.log(highestPrice);
-        //            var price = products[i].priceInCents
-        //            if(price === highestPrice){
-        //                return products[i].name
-        //            }
-        //        }
-        //    }
-        //
-        // console.log(returnMostExpensiveProductObjectInStock(products));
-        // // returnLeastExpensiveProductObjectInStock(products)
-        // // returnAveragePriceOfAllProductsInStock(products)
-        // // returnProductObjectsNotInStock(products)
-        //
-        // Write a function that accepts an array of numbers and returns the average.
-        //
-        //     Test inputs:
-        //     [3, 5, 7, 10, 0]
-        //         [0, 3, 5, 6, 21]
-// getting better keep practicing!! when adding the pieces of an array use +=, you can also use foreach loop
-<!--        function arrayAverage(array){-->
-<!--            var sum = 0-->
-<!--            for (var i=0;i< array.length;i++){-->
-<!--              sum += array[i]-->
-<!--            } return sum / array.length-->
-<!--        } -->
+    //     const products = [
+    //         {
+    //             name: 'Hammer',
+    //             priceInCents: 4500,
+    //             isInStock: true
+    //         },
+    //         {
+    //             name: 'Computer',
+    //             priceInCents: 45000,
+    //             isInStock: true
+    //         },
+    //         {
+    //             name: 'Water Bottle',
+    //             priceInCents: 3300,
+    //             isInStock: true
+    //         },
+    //         {
+    //             name: 'Car',
+    //             priceInCents: 990000,
+    //             isInStock: true
+    //         },
+    //         {
+    //             name: 'Cup',
+    //             priceInCents: 230,
+    //             isInStock: false
+    //         },
+    //         {
+    //             name: 'Book',
+    //             priceInCents: 540,
+    //             isInStock: false
+    //         },
+    //     ];
+    //
+    // // Create the following functions that take in an array of product objects and return various values:
+    // //
+    //    function returnMostExpensiveProductObjectInStock(products){
+    //        for(var i = 0; i < products.length; i += 1){
+    //            var highestPrice = Math.max(products[i].priceInCents)
+    //            console.log(highestPrice);
+    //            var price = products[i].priceInCents
+    //            if(price === highestPrice){
+    //                return products[i].name
+    //            }
+    //        }
+    //    }
+    //
+    // console.log(returnMostExpensiveProductObjectInStock(products));
+    // // returnLeastExpensiveProductObjectInStock(products)
+    // // returnAveragePriceOfAllProductsInStock(products)
+    // // returnProductObjectsNotInStock(products)
+    //
+    // Write a function that accepts an array of numbers and returns the average.
+    //
+    //     Test inputs:
+    //     [3, 5, 7, 10, 0]
+    //         [0, 3, 5, 6, 21]
+    // getting better keep practicing!! when adding the pieces of an array use +=, you can also use foreach loop
+    <!--        function arrayAverage(array){-->
+    <!--            var sum = 0-->
+    <!--            for (var i=0;i< array.length;i++){-->
+    <!--              sum += array[i]-->
+    <!--            } return sum / array.length-->
+    <!--        } -->
 
-<!--        console.log(arrayAverage([3,5,7,10,0]));-->
+    <!--        console.log(arrayAverage([3,5,7,10,0]));-->
 
-        let classes = [
-            {class: "6th grade history", students: 18},
-            {class: "7th grade history", students: 20},
-            {class: "8th grade history", students: 22}
-        ];
+    //         let classes = [
+    //             {class: "6th grade history", students: 18},
+    //             {class: "7th grade history", students: 20},
+    //             {class: "8th grade history", students: 22}
+    //         ];
+    //
+    //         // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
+    //         //got it on the first try!!
+    // function calculateTotalStudents(array){
+    //     var total = 0
+    //     for (var i=0;i<array.length;i++){
+    //         total += array[i].students
+    //     }return total
+    // }
+    //
+    //         console.log(calculateTotalStudents(classes));
+    //         // Bonus: instead of the total students, return the highest number of students in any class
 
-        // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
-        //got it on the first try!!
-function calculateTotalStudents(array){
-    var total = 0
-    for (var i=0;i<array.length;i++){
-        total += array[i].students
-    }return total
-}
 
-        console.log(calculateTotalStudents(classes));
-        // Bonus: instead of the total students, return the highest number of students in any class
+    // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
 
-    </script>
+    //convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
+
+    function convertToObject(course, students) {
+        return {class: course, students: students}
+    }
+
+
+    var neighborhood1 = {
+        neighborhood: "Lovely Estates",
+        medianHomePrice: 280000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 8},
+            {name: "MS2", rating: 6},
+            {name: "HS3", rating: 8}
+        ]
+    }
+
+    var neighborhood2 = {
+        neighborhood: "Luminous Estates",
+        medianHomePrice: 270000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 8},
+            {name: "MS2", rating: 8},
+            {name: "HS3", rating: 8}
+        ]
+    }
+
+    var neighborhood3 = {
+        neighborhood: "Ginormous Ego Estates",
+        medianHomePrice: 350000,
+        pool: true,
+        tennis: true,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 9},
+            {name: "MS2", rating: 9},
+            {name: "HS3", rating: 9}
+        ]
+    }
+
+    function desirableNeighborhood(neighborhoodobject) {
+        var totalrating = 0
+            for (var i = 0 ;i < neighborhoodobject.schools.length; i++){
+                totalrating += neighborhoodobject.schools[i].rating;}
+    return neighborhoodobject.medianHomePrice < 300000 && neighborhoodobject.crimeRate === 'low' && totalrating >= 24;
+    }
+
+    // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+</script>
 </body>
 </html>
