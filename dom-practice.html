@@ -7,14 +7,19 @@
 <body>
 
 <input type="text" id="color">
+
 <button type="button" id="change-color">change color</button>
+
 <script>
-   var colorInput = document.getElementById("color")
-    var buttonPress = document.getElementById("change-color")
+
+   var colorInput = document.getElementById("color");
+    var buttonPress = document.getElementById("change-color");
+    var body = document.querySelector("body")
+
 
     buttonPress.addEventListener('click', function(){
-        document.body.style.backgroundColor = colorInput.value
-    })
+        body.style.backgroundColor = colorInput.value
+    });
 </script>
 </body>
 </html>
