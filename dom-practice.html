@@ -10,16 +10,21 @@
 
 <button type="button" id="change-color">change color</button>
 
+<p id="doubleSize" style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus at beatae consequuntur doloremque, dolorum ex magni mollitia nulla quas quidem quod quos rerum sit!</p>
 <script>
 
    var colorInput = document.getElementById("color");
     var buttonPress = document.getElementById("change-color");
-    var body = document.querySelector("body")
-
+    var body = document.querySelector("body");
+    var fontDouble = document.getElementById("doubleSize");
 
     buttonPress.addEventListener('click', function(){
         body.style.backgroundColor = colorInput.value
     });
+    fontDouble.addEventListener('dblclick', function(event){
+        console.log(parseFloat(event.target.style.fontSize))
+
+    })
 </script>
 </body>
 </html>
