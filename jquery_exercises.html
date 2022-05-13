@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <title>intro to jquery</title>
 </head>
+
 <body>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="js/jquery.js"></script>
+<h1 id="header" class="codeup">this is a heading</h1>
+
+<div>
+
+    <p id="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem commodi consequatur
+        dignissimos,
+        distinctio eaque eos id, ipsa iusto mollitia nemo nesciunt porro quas quis, recusandae sint sit soluta
+        voluptcodeup
+    <ul class="list">
+        <li class="codeup">list items</li>
+        <li class="codeup">list items</li>
+        <li >list items</li>
+        <li class="codeup">list items</li>
+    </ul>
+
+</div>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    "use strict";
+    $(function () {
+
+       $('li').css('font-size','20px')
+
+        var heading = $('h1')
+
+        $('p, h1, li').css('background-color', 'yellow')
+//wasnt sure what they meant by highlight, so i highlighted them yellow
+
+        alert(heading.html())
+
+    });</script>
+
 </body>
 </html>
