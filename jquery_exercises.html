@@ -41,8 +41,8 @@
 
         //question 3
         $("li").hover(
-            function (){$("li").css("color", "red")},
-            function (){$("li").css("color", "black")
+            function (e){e.target.style.color = "red"},
+            function (e){e.target.style.color = "black"
         })
     });</script>
 
