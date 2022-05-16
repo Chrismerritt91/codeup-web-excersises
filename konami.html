@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        .container {
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Konami Code</h1>
+</div>
+<script src="/js/jquery-3.6.0.js"></script>
+<script>
+    "use strict";
+    // $(function () {
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+
+
+    var gamerInput = []
+    var inputArray = $(document).keyup(function (event) {
+        gamerInput.push(event.keyCode)
+        console.log(gamerInput);
+
+    })
+
+    // });
+</script>
+</body>
+</html>
