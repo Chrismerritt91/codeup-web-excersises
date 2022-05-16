@@ -28,15 +28,22 @@
     "use strict";
     $(function () {
 
-       $('li').css('font-size','20px')
+        //question 1
+        var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+       $("h1").click(function(e){
+          e.target.style.backgroundColor = randomColor
+       })
 
-        var heading = $('h1')
+        //question 2
+        $("p").dblclick(function(e){
+            e.target.style.fontSize = "18px"
+        })
 
-        $('p, h1, li').css('background-color', 'yellow')
-//wasnt sure what they meant by highlight, so i highlighted them yellow
-
-        alert(heading.html())
-
+        //question 3
+        $("li").hover(
+            function (){$("li").css("color", "red")},
+            function (){$("li").css("color", "black")
+        })
     });</script>
 
 </body>
