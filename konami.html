@@ -3,30 +3,46 @@
 <head>
     <title>Konami Code</title>
     <style>
-        .container {
-
+        body {
+            background-image: url("images/contra-boss.png");
+            background-size: cover;
+        }
+        h1{
+            color: blue;
+            font-size: 50px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Konami Code</h1>
+    <h1>You're not cheating are you?</h1>
 </div>
 <script src="/js/jquery-3.6.0.js"></script>
 <script>
     "use strict";
-    // $(function () {
+    $(function () {
     var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
 
-
     var gamerInput = []
-    var inputArray = $(document).keyup(function (event) {
+    $(document).keyup(function (event) {
         gamerInput.push(event.keyCode)
         console.log(gamerInput);
 
+        if(konamiCode.every(function(val, index) {
+            return val === gamerInput[index];
+        })){
+            $("body").css({
+                "background-image": "url(images/boss-defeat.png",
+                "background-size": "cover"
+            })
+            $("h1").text("If you ain't cheatin, you ain't tryin! 30x Lives").css({
+                "color": "red",
+                "font-size": "70px"
+            })
+        }
     })
 
-    // });
+    });
 </script>
 </body>
 </html>
