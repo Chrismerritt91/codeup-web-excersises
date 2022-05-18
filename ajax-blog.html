@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax-blog</title>
+</head>
+<body>
+<div id="posts"></div>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    "use strict";
+    $(function (){
+        $.ajax("/data/blog.json").done(function (data){
+            data.forEach(function (post) {
+                $("#posts").append(
+                    "<tr><th>" + tool.title +
+                    "</th><th>" + tool.quantity +
+                    "</th><th>" + tool.price +
+                    "</th><th>" + tool.categories +
+                    "</th></tr>"
+                )
+            });
+        });
+
+
+    });
+
+</script>
+</body>
+</html>
