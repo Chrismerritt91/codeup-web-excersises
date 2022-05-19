@@ -19,7 +19,7 @@
             color: #830000;
         }
 
-        table, tr, th {
+        table, tr, th, td{
             border: 1px solid black;
             border-collapse: collapse;
             background-color: whitesmoke;
@@ -57,23 +57,30 @@
 </div>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
-    $(function () {
+    $(function ()  {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        $("#refresh").click(function (e) {
-            // e.preventDefault()
+        function loadInventory(){
             $.ajax("/data/inventory.json").done(function (data) {
+                //when this code runs it erases the content of insert products then the code below it runs
+                $("#insertProducts").html("");
                 data.forEach(function (tool) {
                     $("#insertProducts").append(
-                        "<tr><th>" + tool.title +
-                        "</th><th>" + tool.quantity +
-                        "</th><th>" + tool.price +
-                        "</th><th>" + tool.categories +
-                        "</th></tr>"
+                        "<tr><td>" + tool.title +
+                        "</td><td>" + tool.quantity +
+                        "</td><td>" + tool.price +
+                        "</td><td>" + tool.categories +
+                        "</td></tr>"
                     )
                 });
             });
+        }
+
+        $("#refresh").click(function () {
+            loadInventory()
         })
+
+
 
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect

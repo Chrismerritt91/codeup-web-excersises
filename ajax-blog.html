@@ -49,10 +49,10 @@
         $.ajax("/data/blog.json").done(function (data){
             data.forEach(function (post) {
                 $("#posts").append(
-                    "<article><h4 style='text-decoration: underline'>" + post.title +
-                    "</h4><h4>" + "Categories(" + post.categories +") "+
-                    "</h4><h4>" + "Written on: " + post.date +
-                    "</h4><p>" + post.content +
+                    "<article><h5 style='text-decoration: underline'>" + post.title +
+                    "</h5><h5>" + "Categories(" + post.categories +") "+
+                    "</h5><h5>" + "Written on: " + post.date +
+                    "</h5><p>" + post.content +
                     "</p></article>"
                 );
             });
