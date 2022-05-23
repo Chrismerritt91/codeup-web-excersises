@@ -1,9 +1,3 @@
-// $.get("http://api.openweathermap.org/data/2.5/weather", {
-//     APPID: OPEN_WEATHER_APPID,
-//     q:     "San Antonio, US"
-// }).done(function(data) {
-//     console.log(data);
-// });
 $(function () {
 
     $.get("http://api.openweathermap.org/data/2.5/onecall", {
@@ -11,9 +5,12 @@ $(function () {
         lat: 30.097162,
         lon: -95.616055,
         units: "imperial"
-    }).done(function (data) {
+    }).done(cardCreate)
+
+        function cardCreate (data) {
         console.log('The entire response:', data);
-        data.daily.forEach(function (element,index) {
+        $("#card-list").html("");
+        data.daily.forEach(function (element, index) {
             if (index < 5) {
 
                 //displays date in spot on card
@@ -45,15 +42,13 @@ $(function () {
 
                 let dailyIcon = element.weather[0].icon;
                 let iconLink = "http://openweathermap.org/img/wn/" + dailyIcon + "@2x.png";
-                $(".weather-icon").attr("src", iconLink)
 
                 $("#card-list").append(
-                    "<div class=\"card col-sm-10 col-md-3 col-lg-2\">" +
-                    "<div class=\"card-top d-flex flex-column p-0\">" +
-                    "<p class=\"card-date text-center bg-light mb-0\">" + date + "</p>" +
+                    "<div class=\"card col-8 col-sm-4 col-lg-2 justify-content-around\">" +
+                    "<div class=\"card-top d-flex flex-column p-0 h-100\">" +
+                    "<p class=\"card-date text-center bg-light my-0\">" + date + "</p>" +
                     "<p class=\"card-temp text-center my-1 p-0\">" + dailyTemp + "</p>" +
-                    "<img class=\"weather-icon align-self-center\" src=\"#\" alt=\"weather-icon\">" +
-                    "</div><div class=\"container card-bottom\">" +
+                    "<img class=\"weather-icon align-self-center\" src=\"" + iconLink + "\" alt=\"weather-icon\">" +
                     "<p class=\"card-descript mb-1 ms-1\">" + "Description: " + weatherCondition + "</p>" +
                     "<p class=\"card-humidity my-1 ms-1\">" + "Humidity: " + humidity + "</p>" +
                     "<hr class=\"m-0\">" +
@@ -65,5 +60,45 @@ $(function () {
             }
         });
 
+    };
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-95.616055, 30.097162], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+
+    const Marker = new mapboxgl.Marker()
+        .setLngLat([-95.616055, 30.097162])
+        .addTo(map)
+
+
+
+    $(".search-button").click(function(e){
+        e.preventDefault()
+        const searchInput = $("#location-input").val()
+        if(searchInput !== ''){
+            geocode(searchInput, MAPBOX_API_TOKEN).then(function(result){
+                map.setCenter(result);
+                map.setZoom(12);
+
+                const Marker = new mapboxgl.Marker()
+                    .setLngLat(result)
+                    .addTo(map);
+
+                $("#current-city").text(searchInput.toUpperCase())
+
+                $.get("http://api.openweathermap.org/data/2.5/onecall", {
+                    APPID: OPEN_WEATHER_APPID,
+                    lat: result[1],
+                    lon: result[0],
+                    units: "imperial"
+                }).done(cardCreate)
+
+
+            });
+
+        }
     });
 });
