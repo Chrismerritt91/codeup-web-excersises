@@ -60,7 +60,7 @@ $(function () {
             }
         });
 
-    };
+    }
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -69,36 +69,64 @@ $(function () {
         zoom: 11 // starting zoom
     });
 
-    const Marker = new mapboxgl.Marker()
+    const Marker = new mapboxgl.Marker({
+        draggable: true
+    })
         .setLngLat([-95.616055, 30.097162])
-        .addTo(map)
+        .addTo(map);
 
+    function onDragEnd() {
+        const lngLat = Marker.getLngLat();
+        console.log(lngLat)
+
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: lngLat.lng,
+            lon: lnglat.lat,
+            units: "imperial"
+        }).done(cardCreate);
+    }
+
+    Marker.on('dragend', onDragEnd);
 
 
     $(".search-button").click(function(e){
         e.preventDefault()
+        Marker.remove()
         const searchInput = $("#location-input").val()
         if(searchInput !== ''){
             geocode(searchInput, MAPBOX_API_TOKEN).then(function(result){
                 map.setCenter(result);
                 map.setZoom(12);
 
-                const Marker = new mapboxgl.Marker()
+                const Marker = new mapboxgl.Marker({
+                    draggable: true
+                })
                     .setLngLat(result)
                     .addTo(map);
 
-                $("#current-city").text(searchInput.toUpperCase())
+                reverseGeocode({lng: result[0], lat: result[1]}, MAPBOX_API_TOKEN).then(function(city){
+                    $("#current-city").text(city)
+                });
+
 
                 $.get("http://api.openweathermap.org/data/2.5/onecall", {
                     APPID: OPEN_WEATHER_APPID,
                     lat: result[1],
                     lon: result[0],
                     units: "imperial"
-                }).done(cardCreate)
+                }).done(cardCreate);
 
 
             });
 
         }
     });
+    // click to get lnglat coords
+    // function add_marker (event) {
+    //     var coordinates = event.lngLat;
+    //     console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+    //     marker.setLngLat(coordinates).addTo(map);
+    // }
+    // map.on('click', add_marker);
 });
