@@ -7,8 +7,10 @@ $(function () {
         units: "imperial"
     }).done(cardCreate)
 
+
+// function for cards
         function cardCreate (data) {
-        console.log('The entire response:', data);
+        // console.log('The entire response:', data);
         $("#card-list").html("");
         data.daily.forEach(function (element, index) {
             if (index < 5) {
@@ -45,8 +47,8 @@ $(function () {
 
                 $("#card-list").append(
                     "<div class=\"card col-8 col-sm-4 col-lg-2 justify-content-around\">" +
-                    "<div class=\"card-top d-flex flex-column p-0 h-100\">" +
-                    "<p class=\"card-date text-center bg-light my-0\">" + date + "</p>" +
+                    "<div class=\"card-individual d-flex flex-column p-0 h-100\">" +
+                    "<p class=\"card-date text-center  my-0\">" + date + "</p>" +
                     "<p class=\"card-temp text-center my-1 p-0\">" + dailyTemp + "</p>" +
                     "<img class=\"weather-icon align-self-center\" src=\"" + iconLink + "\" alt=\"weather-icon\">" +
                     "<p class=\"card-descript mb-1 ms-1\">" + "Description: " + weatherCondition + "</p>" +
@@ -61,6 +63,7 @@ $(function () {
         });
 
     }
+    //street view map
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -69,27 +72,58 @@ $(function () {
         zoom: 11 // starting zoom
     });
 
+    // starting marker for Tomball, tx
     const Marker = new mapboxgl.Marker({
         draggable: true
     })
         .setLngLat([-95.616055, 30.097162])
         .addTo(map);
 
-    function onDragEnd() {
-        const lngLat = Marker.getLngLat();
-        console.log(lngLat)
+    // Makes marker draggable and updates info
+//     //cited https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
+//     function onDragEnd() {
+//         let lngLat = Marker.getLngLat();
+//         let long = `${lngLat.lng}`;
+//         let lat = `${lngLat.lat}`;
+//
+//         reverseGeocode({lng: long, lat: lat}, MAPBOX_API_TOKEN).then(function(city){
+//             $("#current-city").text(city)
+//         });
+//
+//         $.get("http://api.openweathermap.org/data/2.5/onecall", {
+//             APPID: OPEN_WEATHER_APPID,
+//             lat: lat,
+//             lon: long,
+//             units: "imperial"
+//
+//         }).done(cardCreate);
+//     }
+//
+//     Marker.on('dragend', onDragEnd);
+
+    // click to get location
+    function add_marker (event) {
+        var coordinates = event.lngLat;
+        console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+        Marker.setLngLat(coordinates).addTo(map);
+
+        reverseGeocode({lng: coordinates.lng, lat: coordinates.lat}, MAPBOX_API_TOKEN).then(function(city){
+            $("#current-city").text(city)
+        });
+
 
         $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: OPEN_WEATHER_APPID,
-            lat: lngLat.lng,
-            lon: lnglat.lat,
+            lat: coordinates.lat,
+            lon: coordinates.lng,
             units: "imperial"
         }).done(cardCreate);
     }
+    map.on('click', add_marker);
 
-    Marker.on('dragend', onDragEnd);
 
 
+// use search bar to find location
     $(".search-button").click(function(e){
         e.preventDefault()
         Marker.remove()
@@ -122,11 +156,5 @@ $(function () {
 
         }
     });
-    // click to get lnglat coords
-    // function add_marker (event) {
-    //     var coordinates = event.lngLat;
-    //     console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
-    //     marker.setLngLat(coordinates).addTo(map);
-    // }
-    // map.on('click', add_marker);
+
 });
