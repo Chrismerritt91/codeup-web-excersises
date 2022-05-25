@@ -206,7 +206,7 @@
 // var doubleInput = function(input) {
 //     return input * 2;
 // }
-const doubleInput = input => input * 2;
+// const doubleInput = input => input * 2;
 
 // ============== Default Parameter Values
 
@@ -301,7 +301,7 @@ const doubleInput = input => input * 2;
 
 // let { breed, age, name, isCute } = puppy;
 //
-//
+// breed = "dalmation"
 // //
 // console.log(breed);
 // console.log(age);
