@@ -13,7 +13,7 @@ body{
     height: 400px;
 }
 .card-individual{
-    background-color: whitesmoke;
+    background-color: gainsboro;
     border-radius: 5px;
 }
 .card-date{

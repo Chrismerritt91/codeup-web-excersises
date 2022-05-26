@@ -81,26 +81,26 @@ $(function () {
         .addTo(map);
 
     // Makes marker draggable and updates info
-//     //cited https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
-//     function onDragEnd() {
-//         const lngLat = Marker.getLngLat();
-//         const long = `${lngLat.lng}`;
-//         const lat = `${lngLat.lat}`;
-//
-//         reverseGeocode({lng: long, lat: lat}, MAPBOX_API_TOKEN).then(function(city){
-//             $("#current-city").text(city)
-//         });
-//
-//         $.get("http://api.openweathermap.org/data/2.5/onecall", {
-//             APPID: OPEN_WEATHER_APPID,
-//             lat: lat,
-//             lon: long,
-//             units: "imperial"
-//
-//         }).done(cardCreate);
-//     }
-//
-//     Marker.on('dragend', onDragEnd);
+    //cited https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
+    function onDragEnd() {
+        const lngLat = Marker.getLngLat();
+        const long = `${lngLat.lng}`;
+        const lat = `${lngLat.lat}`;
+
+        reverseGeocode({lng: long, lat: lat}, MAPBOX_API_TOKEN).then(function(city){
+            $("#current-city").text(city)
+        });
+
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: lat,
+            lon: long,
+            units: "imperial"
+
+        }).done(cardCreate);
+    }
+
+    Marker.on('dragend', onDragEnd);
 
     // click to get location
     function add_marker(event) {
